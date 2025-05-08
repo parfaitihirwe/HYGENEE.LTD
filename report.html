@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Added -->
+  <title>Report Waste Issue - HYGENEE.LTD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-image: url(wp8401150-waste-management-wallpapers.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    label {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HYGENEE.LTD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report Issue</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <h2 class="text-center text-success mb-4">Tanga Amakuru y’Ikibazo cy’Umwanda</h2>
+
+    <form id="reportForm">
+      <div class="mb-3">
+        <label for="amazina" class="form-label">Amazina</label>
+        <input type="text" class="form-control" id="amazina" name="amazina" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="akagari" class="form-label">Akagari</label>
+        <input type="text" class="form-control" id="akagari" name="akagari" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="umudugudu" class="form-label">Umudugudu</label>
+        <input type="text" class="form-control" id="umudugudu" name="umudugudu" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="isibo" class="form-label">Isibo</label>
+        <input type="text" class="form-control" id="isibo" name="isibo" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="nomero" class="form-label">Nomero y’Urugo</label>
+        <input type="text" class="form-control" id="nomero" name="nomero" required>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">Ohereza</button>
+    </form>
+  </div>
+
+  <!-- Modal y'ubutumwa bwoherejwe -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="successModalLabel">Murakoze!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Funga"></button>
+        </div>
+        <div class="modal-body">
+          Ubutumwa bwawe bwoherejwe neza.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript yo kwerekana modal -->
+  <script>
+    document.getElementById("reportForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Irinda ko page isubiraho
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      this.reset(); // Gusiba ibyo umuntu yari yanditse
+    });
+  </script>
+
+</body>
+</html>
